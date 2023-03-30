@@ -12,8 +12,9 @@ namespace SuperHeroAPI.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer();
+            optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=superHeroDb;Trusted_Connection=true;TrustServerCertificate=true;");
         }
+        public DbSet<SuperHero> SuperHeroes { get; set; }
 
     }
 }
